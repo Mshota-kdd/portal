@@ -1,0 +1,175 @@
+/* ===============================
+   全体レイアウト・基本設定
+================================= */
+body {
+  margin: 0; /* ブラウザのデフォルト余白を除去 */
+  font-family: sans-serif; /* シンプルで読みやすいフォントを指定 */
+  padding-top: 60px; /* 固定ヘッダー分の余白を確保 */
+}
+
+/* ===============================
+   ヘッダー（画面上部に固定表示）
+================================= */
+.header {
+  position: fixed; /* スクロールしても常に上部に表示 */
+  top: 0; /* 画面の最上部に配置 */
+  left: 0; /* 左端に配置 */
+  width: 100%; /* 横幅いっぱいに広げる */
+  height: 60px; /* 高さを固定 */
+  background-color: #333; /* 背景色（ダークグレー） */
+  color: white; /* 文字色（白） */
+  padding: 10px 20px; /* 内側の余白（上下10px、左右20px） */
+  box-sizing: border-box; /* paddingを含めてサイズ計算 */
+  z-index: 1000; /* 他の要素より前面に表示 */
+  display: flex; /* 子要素を横並びに */
+  align-items: center; /* 垂直方向中央揃え */
+  font-size: 20px; /* フォントサイズ */
+  font-weight: bold; /* 太字にする */
+}
+
+/* ===============================
+   サイドバー（画面左に固定表示）
+================================= */
+.sidebar {
+  position: fixed; /* スクロールしても左に固定 */
+  top: 60px; /* ヘッダーの下に配置 */
+  left: 0; /* 左端に配置 */
+  width: 200px; /* 横幅を固定 */
+  height: calc(100vh - 60px); /* ヘッダーを除いた画面高に合わせる */
+  background-color: #f0f0f0; /* 背景色（ライトグレー） */
+  padding: 20px; /* 内側の余白 */
+  box-sizing: border-box; /* paddingを含めてサイズ計算 */
+  overflow-y: auto; /* 内容が多い場合はスクロール可能に */
+}
+
+/* ===============================
+   メインコンテンツ領域
+================================= */
+.main {
+  margin-left: 220px; /* サイドバー幅＋余白分を確保 */
+  padding: 20px; /* 内側の余白 */
+  box-sizing: border-box; /* paddingを含めてサイズ計算 */
+}
+
+/* ===============================
+   新規投稿ボタン
+================================= */
+.new-button {
+  display: inline-block; /* インライン要素として表示 */
+  margin-bottom: 20px; /* 下に余白を追加 */
+  padding: 10px 15px; /* ボタン内の余白 */
+  background-color: #007bff; /* 背景色（青） */
+  color: white; /* 文字色（白） */
+  text-decoration: none; /* 下線を消す */
+  border-radius: 5px; /* 角を丸くする */
+}
+
+/* ===============================
+   記事表示ブロック
+================================= */
+.article {
+  border-bottom: 1px solid #ccc; /* 下線で区切る */
+  margin-bottom: 20px; /* 下に余白を追加 */
+  padding-bottom: 10px; /* 内側の余白 */
+}
+
+.article img {
+  width: 500px; /* 固定幅で表示 */
+  height: auto; /* 縦横比を維持して高さを自動調整 */
+  display: block; /* ブロック要素として表示 */
+  margin-bottom: 10px; /* 下に余白を追加 */
+}
+
+/* 記事本文の改行を反映 */
+.article-body {
+  white-space: pre-line; /* 改行（\n）をそのまま表示する */
+}
+
+/* ===============================
+   記事フッター（更新日時＋操作リンク）
+================================= */
+.article-footer {
+  display: flex; /* 横並びにする */
+  justify-content: space-between; /* 左右に分けて配置 */
+  align-items: center; /* 垂直方向中央揃え */
+  font-size: 0.9em; /* 少し小さめの文字サイズ */
+  color: gray; /* 文字色（グレー） */
+  margin-top: 5px; /* 上に余白を追加 */
+}
+
+.article-footer .actions a {
+  color: #007bff; /* リンク色（青） */
+  text-decoration: none; /* 下線を消す */
+  margin-left: 10px; /* リンク間に余白を追加 */
+}
+
+.article-footer .actions a:hover {
+  text-decoration: underline; /* ホバー時に下線を表示 */
+}
+
+/* ===============================
+   共通フォームレイアウト
+================================= */
+form {
+  max-width: 600px; /* 最大幅を制限 */
+}
+
+form input,
+form textarea {
+  width: 100%; /* 横幅いっぱいに広げる */
+  margin-bottom: 10px; /* 下に余白を追加 */
+  padding: 8px; /* 内側の余白 */
+  font-size: 16px; /* フォントサイズ */
+  box-sizing: border-box; /* paddingを含めてサイズ計算 */
+}
+
+/* ===============================
+   新規投稿フォーム
+================================= */
+.form-container {
+  padding: 20px; /* 内側の余白 */
+  font-family: sans-serif; /* フォント指定（統一） */
+}
+
+.form-container form button {
+  padding: 10px 15px; /* ボタン内の余白 */
+  background-color: #28a745; /* 背景色（緑） */
+  color: white; /* 文字色（白） */
+  border: none; /* 枠線なし */
+  border-radius: 5px; /* 角を丸くする */
+  cursor: pointer; /* ホバー時にポインター表示 */
+}
+
+/* ===============================
+   編集フォーム
+================================= */
+.edit-container {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.edit-container form button {
+  padding: 10px 15px;
+  background-color: #ffc107; /* 背景色（黄色） */
+  color: black; /* 文字色（黒） */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* ===============================
+   問い合わせフォーム
+================================= */
+.contact-container {
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+.contact-container form button {
+  padding: 10px 15px;
+  background-color: #17a2b8; /* 背景色（青緑） */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>記事編集 - 社内周知</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="header">
+    とある株式会社のPortal
+  </div>
+  <div class="edit-container">
+    <h1>記事編集</h1>
+    <form action="/edit/<%= article.id %>" method="POST">
+      <input type="text" name="title" value="<%= article.title %>" required>
+      <textarea name="body" rows="5" required><%= article.body %></textarea>
+      <button type="submit">更新する</button>
+    </form>
+  </div>
+</body>
+</html>

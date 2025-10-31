@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>社内ポータル - 社内周知</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <div class="header">
+    とある株式会社のPortal
+  </div>
+
+  <!-- サイドバー -->
+  <div class="sidebar">
+    <h3>メニュー</h3>
+    <ul>
+      <li><a href="/">社内周知</a></li>
+      <li><a href="https://drive.google.com">ライブラリ</a></li>
+      <li><a href="/board">掲示板（準備中）</a></li>
+      <li><a href="/contact">お問い合わせ</a></li>
+    </ul>
+  </div>
+
+  <!-- メインコンテンツ -->
+  <div class="main">
+    <h1>社内周知</h1>
+    <a href="/new" class="new-button">＋ 新規投稿</a>
+
+    <% articles.forEach(article => { %>
+      <div class="article">
+        <img src="/uploads/<%= article.image %>" alt="画像">
+        <h2><%= article.title %></h2>
+        <p class="article-body"><%= article.body %></p>
+
+        <div class="article-footer">
+          <span class="timestamp">更新日時: <%= new Date(article.updatedAt).toLocaleString('ja-JP') %></span>
+          <span class="actions">
+            <a href="/edit/<%= article.id %>">編集</a> |
+            <a href="/delete/<%= article.id %>">削除</a>
+          </span>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>

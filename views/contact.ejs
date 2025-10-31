@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>問い合わせフォーム</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="header">
+    とある株式会社のPortal
+  </div>
+  <div class="contact-container">
+    <h1>問い合わせフォーム</h1>
+    <form action="/contact" method="POST">
+      <input type="text" name="name" placeholder="名前" required>
+      <input type="email" name="email" placeholder="メールアドレス" required>
+      <textarea name="message" placeholder="お問い合わせ内容" rows="5" required></textarea>
+      <button type="submit">送信</button>
+    </form>
+  </div>
+</body>
+</html>
